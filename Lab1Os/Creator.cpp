@@ -1,5 +1,3 @@
-#include <iostream>
-#include <fstream>
 #include"Header.h"
 int main(int argc, char* argv[]) {
     if (argc < 3) {
