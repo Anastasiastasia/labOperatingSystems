@@ -1,25 +1,4 @@
-#include <iostream>
-#include <windows.h>
-#include <thread>
-#include <vector>
-#include <chrono>
-
-using namespace std;
-
-const int MAX_MARKERS = 10; 
-const int SLEEP_DURATION = 5; 
-CRITICAL_SECTION cs;
-HANDLE hEventStart; 
-HANDLE hEventContinue; 
-HANDLE hEventStop; 
-struct Marker {
-    int id;
-    int markedCount;
-    bool canContinue;
-    bool stopRequested;
-};
-vector<int> numbers;
-vector<Marker> markers;
+#include "Header.h"
 DWORD WINAPI markerThread(LPVOID param) {
     Marker& marker = *static_cast<Marker*>(param);
     marker.markedCount = 0;
